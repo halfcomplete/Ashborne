@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "AshborneWASM",
   "resources": {
-    "hash": "sha256-R9lNthX4txIXePQk7NWLJ/k68Tp4asbiPs2T/2Gwipw=",
+    "hash": "sha256-XJSJPfOM2FHgAl1ag2FWCoD1D3YAPu7qpJr34eyO7kM=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-1QpKPnxEuRCElzcp+e3MrovJeAJkuzqKmRQay/6Aa08="
     },
@@ -18,7 +18,7 @@
     },
     "coreAssembly": {},
     "assembly": {
-      "AshborneGame.wasm": "sha256-yxXBiK74j0tvuvlXkZwwIOON91MKyC4zXMqIld87C1s=",
+      "AshborneGame.wasm": "sha256-Ty+hLc2bGGUGdHak+/FhbKxcXL661wZFygjzX69L8Qc=",
       "AshborneWASM.wasm": "sha256-ywvRZMfEPFvWYVHjnfxPw8EWOiSdY26bDRsoMV2Wn04=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-Z4PUpJJPefQv6/1kzmnZ0tK9iKWvvdh4e+3KOAbL/u8=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-GF3/o5hKtlR4zMRhZOdBbU+Twcbj7gRDtYTDyPMyJ2E=",
