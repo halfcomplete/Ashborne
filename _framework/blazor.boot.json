@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "AshborneWASM",
   "resources": {
-    
+    "hash": "sha256-zX58XRYJPE4+7/VjVjVZ8VXMeAffYhBxcsyjAAzVY2A=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-1QpKPnxEuRCElzcp+e3MrovJeAJkuzqKmRQay/6Aa08="
     },
