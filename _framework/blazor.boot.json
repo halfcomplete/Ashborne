@@ -1,4 +1,4 @@
-{
+﻿{
   "mainAssemblyName": "AshborneWASM",
   "resources": {
     "hash": "sha256-d4ZrBfBtWgBoEWpvsqWTkHju82TAeKWHqcuhD6hc+U0=",
@@ -156,7 +156,7 @@
       "System.Runtime.Serialization.Primitives.wasm": "sha256-cbsksW0ha0V/4ntN+j/BjZcF1Smlmytb83UGQP2LlxE=",
       "System.Runtime.Serialization.wasm": "sha256-6+WuqZhjaqD8lGllJN3JkAnjZdicQkKe/Fnp9QZCzg8=",
       "System.Runtime.Serialization.Xml.wasm": "sha256-4a2IDyy+r2/VVJGjcYiCC0RoBmsKXlbjWj/xJXnY5vg=",
-      "System.Runtime.wasm": "sha256-2fiqeraxNUUCJHIl2JL2FS9EbTgEIqCBzX9hD+ZWCNU=",
+      "System.Runtime.wasm": "sha256-sudl0Rb4TBRoIzR8c6dRwF3QK8ezkccl/L4VSRFWDSQ=",
       "System.Security.AccessControl.wasm": "sha256-C//a5VwbqwV3RZJiJc3RXAqPBvo4Wiy/Aq96dwF15zg=",
       "System.Security.Claims.wasm": "sha256-EathWqxVRyaV9D+q10lclIQWUCy+Uifwis38KxpXq+Y=",
       "System.Security.Cryptography.Algorithms.wasm": "sha256-IvOdWtw7jBIH/yOJcCWL/yo8EWzv1WCCY126pf7kw3g=",
