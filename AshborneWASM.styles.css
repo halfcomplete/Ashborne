@@ -7,11 +7,11 @@
 
 main[b-naj0afsn24] {
     flex: 1;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+
 }
 
-.sidebar[b-naj0afsn24] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
 
 .top-row[b-naj0afsn24] {
     background-color: #f7f7f7;
@@ -24,7 +24,6 @@ main[b-naj0afsn24] {
 
     .top-row[b-naj0afsn24]  a, .top-row[b-naj0afsn24]  .btn-link {
         white-space: nowrap;
-        margin-left: 1.5rem;
         text-decoration: none;
     }
 
@@ -52,13 +51,6 @@ main[b-naj0afsn24] {
         flex-direction: row;
     }
 
-    .sidebar[b-naj0afsn24] {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
     .top-row[b-naj0afsn24] {
         position: sticky;
         top: 0;
@@ -67,13 +59,7 @@ main[b-naj0afsn24] {
 
     .top-row.auth[b-naj0afsn24]  a:first-child {
         flex: 1;
-        text-align: right;
         width: 0;
-    }
-
-    .top-row[b-naj0afsn24], article[b-naj0afsn24] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
     }
 }
 /* /Layout/NavMenu.razor.rz.scp.css */
@@ -150,8 +136,6 @@ main[b-naj0afsn24] {
     }
 
     .collapse[b-oc6fcfzpal] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
     }
     
     .nav-scrollable[b-oc6fcfzpal] {
