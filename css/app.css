@@ -69,40 +69,78 @@ body {
         content: "An error has occurred.";
     }
 
+/* TODO: Add a background to the loading screen. */
+
 .loading-progress {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 8rem;
     height: 8rem;
-    margin: 20vh auto 1rem auto;
+    margin: 0 auto;
 }
 
-    .loading-progress circle {
-        fill: none;
-        stroke: #e0e0e0;
-        stroke-width: 0.6rem;
-        transform-origin: 50% 50%;
-        transform: rotate(-90deg);
-    }
+.loading-progress-bar-container {
+    width: 60vw;
+    max-width: 600px;
+    min-width: 200px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+}
 
-        .loading-progress circle:last-child {
-            stroke: #1b6ec2;
-            stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
-            transition: stroke-dasharray 0.05s ease-in-out;
-        }
+.loading-progress-bar-bg {
+    width: 100%;
+    height: 18px;
+    background: #23201b;
+    border-radius: 9px;
+    box-shadow: 0 2px 8px #0006, 0 1.5px 0 #bfae8e44 inset;
+    overflow: hidden;
+    border: 1.5px solid #bfae8e33;
+    position: relative;
+}
+
+.loading-progress-bar-fill {
+    width: calc(var(--blazor-load-percentage, 0%) * 1.15);
+    height: 100%;
+    background: linear-gradient(90deg, #bfae8e 60%, #8c7c5a 100%);
+    background: #f8eecb;
+    border-radius: 9px 0 0 9px;
+    transition: width 0.2s ease;
+}
 
 .loading-progress-text {
     font-family: AnonymousPro-Regular, serif;
-    position: absolute;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-size: 20px;
-    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+    margin-bottom: 1.2rem;
+    color: antiquewhite;
 }
 
     .loading-progress-text::after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+.loading-tip {
+    margin-top: 0.5rem;
+    font-family: 'IMFellEnglishSC', serif;
+    font-size: 1.1rem;
+    color: #f8eecb;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px #0004;
+    min-height: 1em;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .scene-header {
     position: sticky;
@@ -180,7 +218,6 @@ body {
         border-radius: 8px;
     }
 
-/* Inputs & dialogues flush with output */
 input,
 .dialogue-waiting {
     width: 80%;
@@ -203,7 +240,6 @@ input,
     outline: none;
 }
 
-/* Input styling */
 input {
     width: 80%;
     max-width: 1500px;
@@ -330,6 +366,7 @@ input {
         border-radius: 0 0 6px 6px;
     }
 }
+
 .main-container {
     position: relative;
     width: 100vw;
@@ -338,9 +375,11 @@ input {
     min-width: 100vw;
     overflow: hidden;
 }
+
 .game-bg-black {
     background: #000 !important;
 }
+
 .title-screen {
     position: absolute;
     top: 0;
@@ -357,11 +396,76 @@ input {
     opacity: 1;
     pointer-events: all;
 }
+
 .title-screen.fade-out {
     opacity: 0;
     pointer-events: none;
     transition: opacity 1s;
 }
+
+.title-screen.fade-overlap {
+    z-index: 11;
+}
+
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.intro-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-screen.fade-in {
+    opacity: 1;
+}
+
+.intro-text {
+    font-family: 'IMFellEnglishSC', serif;
+    font-size: 2.5rem;
+    color: #f8eecb;
+    letter-spacing: 0.1em;
+    text-shadow: 0 4px 32px #000a, 0 2px 8px #bfae8e44;
+    text-align: center;
+    user-select: none;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.intro-text.fade-in {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+.intro-text.fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.intro-text.final-phase {
+    font-size: 4rem;
+    animation: enlargeText 5s ease-in-out forwards;
+}
+
+@keyframes enlargeText {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
 .title-logo {
     font-family: 'IMFellEnglishSC', serif;
     font-size: 5rem;
@@ -372,6 +476,7 @@ input {
     text-align: center;
     user-select: none;
 }
+
 .begin-button {
     font-family: 'AnonymousPro-Regular', serif;
     font-size: 2rem;
@@ -387,10 +492,12 @@ input {
     font-weight: bold;
     letter-spacing: 0.08em;
 }
+
 .begin-button:hover, .begin-button:focus {
     transform: scale(1.04);
     outline: none;
 }
+
 .game-content {
     position: absolute;
     top: 0;
@@ -398,5 +505,74 @@ input {
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    /* Always visible, no opacity or pointer-events toggling */
+}
+
+.input-gif-overlay-container {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* min-height removed to allow content to shrink to fit */
+}
+
+.input-overlay-wrapper {
+    position: relative;
+    width: 80%;
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-overlay-wrapper input {
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+.input-overlay-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 160px;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-overlay-gif.fade-out {
+    opacity: 0;
+}
+
+.input-overlay-gif.fade-in {
+    opacity: 0.02;
+}
+
+.silent-timer {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.2rem;
+    font-size: 1.1rem;
+    color: #bd955d;
+    font-weight: bold;
+    background: rgba(59, 52, 42, 0.5);
+    padding: 0.2em 0.8em;
+    border-radius: 1em;
+    z-index: 10;
+}
+
+#app {
+    min-height: 100vh;
+    min-width: 100vw;
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
