@@ -27,6 +27,46 @@
     background: #bfae8e;
     color: #23201b;
 }
+.settings-action-btn:disabled {
+    background: linear-gradient(135deg, #3f3b35, #56504a);
+    color: #9f9787;
+    border-color: #6a6257;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.75;
+}
+
+    .settings-action-btn:disabled:hover {
+        background: linear-gradient(135deg, #3f3b35, #56504a);
+        border-color: #6a6257;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .settings-action-btn:disabled:active {
+        transform: none;
+    }
+
+.save-button-container {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.save-tooltip {
+    position: fixed;
+    z-index: 3000;
+    background: #23201b;
+    color: #f8eecb;
+    border: 1px solid #bfae8e;
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    font-family: 'AnonymousPro-Regular', monospace;
+    font-size: 0.9rem;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
 /* Settings Modal and Overlay */
 .settings-overlay {
     position: fixed;
@@ -102,7 +142,6 @@ input[type="range"] {
     color: #23201b;
 }
 .settings-action-btn {
-    margin-top: 2rem;
     width: 100%;
     padding: 0.9rem 1rem;
     background: linear-gradient(135deg, #5d4a2f, #7a6543);
@@ -472,6 +511,26 @@ input {
         transform: translateX(2px);
     }
 
+.choice-button:disabled {
+    background-color: #2d2d2d;
+    color: #888;
+    border-color: #444;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+}
+
+    .choice-button:disabled:hover {
+        background-color: #2d2d2d;
+        border-color: #444;
+        transform: none;
+    }
+
+    .choice-button:disabled:active {
+        background-color: #2d2d2d;
+        transform: none;
+    }
+
 .dialogue-waiting p {
     margin: 0;
     color: #888;
@@ -699,9 +758,39 @@ input {
     letter-spacing: 0.08em;
 }
 
-.begin-button:hover, .begin-button:focus {
-    transform: scale(1.04);
-    outline: none;
+    .begin-button:hover, .begin-button:focus {
+        transform: scale(1.04);
+        outline: none;
+    }
+
+.continue-button {
+    font-family: 'AnonymousPro-Regular', serif;
+    font-size: 2rem;
+    padding: 0.8rem 3.5rem;
+    background: linear-gradient(90deg, #bfae8e 60%, #8c7c5a 100%);
+    color: #23201b;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #0006;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+    .continue-button:hover, .continue-button:focus {
+        background: linear-gradient(90deg, #bfae8e 60%, #8c7c5a 100%);
+        color: #23201b;
+        transform: scale(1.04);
+        outline: none;
+    }
+
+.begin-button,
+.continue-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .game-content {
